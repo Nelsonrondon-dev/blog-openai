@@ -8,9 +8,9 @@ with open("0._GPTs.txt", "r", encoding="utf-8") as f:
     apis = [linea.strip() for linea in f]
 with open("2._Keywords.txt", "r", encoding="utf-8") as f:
     keywords = [linea.strip() for linea in f]
-with open("0._Sistema/0. Intención.txt", "r", encoding="utf-8") as f:
+with open("0._Sistema/0._Intención.txt", "r", encoding="utf-8") as f:
     titulo_sistema = f.read().strip()
-with open("1._Usuario/0. Intención.txt", "r", encoding="utf-8") as f:
+with open("1._Usuario/0._Intención.txt", "r", encoding="utf-8") as f:
     titulo_usuario = f.read().strip()
 
 if len(keywords) < N_HILOS:
