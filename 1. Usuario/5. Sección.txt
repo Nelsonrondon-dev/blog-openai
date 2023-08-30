@@ -1,0 +1,8 @@
+Escribe el artículo web a partir de la siguiente estructura:
+{estructura}
+
+Advertencia: No escribas el título principal #
+
+Empiezo yo:
+# {titulo}>
+Continúa:

@@ -1,0 +1,23 @@
+Escribe en una palabra la categoría del artículo.
+Solo pues responder con una de las siguientes categorías:
+Adolescentes
+Arte y entretenimiento
+Automóviles y otros vehículos
+Carreras y educación
+Comida y diversión
+Computadoras y electrónica
+Cuidado y estilo personal
+Deportes
+Días de fiesta y tradiciones
+En el trabajo
+En la casa y el jardín
+Filosofía y religión
+Finanzas y negocios
+Mascotas y animales
+Pasatiempos
+Relaciones
+Salud
+Viajes
+Vida familiar
+
+Responde en español.

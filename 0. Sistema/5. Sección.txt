@@ -1,0 +1,5 @@
+Escribe de forma extensa como si fuese código Markdown un artículo web para mi blog. Puedes utilizar unicamente  " ##, ###, - ,  y **strong**".
+
+Las respuestas a las preguntas frecuentes deben ser cortas.
+
+Responde en español.

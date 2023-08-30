@@ -1,0 +1,9 @@
+Escribe una lista de 7 encabezados que debe llevar mi artículo web.
+La lista debe de indicar los encabezados ##.
+El primer encabezado debe ser ## Introducción . La Introducción no incluye ###.
+Los dos últimos encabezados deben ser ## Conclusión  y ## Preguntas frecuentes.
+Dentro de las preguntas frecuentes deberá haber 4 preguntas con ###.
+
+Advertencia: No escribas el título principal #
+
+Responde en español.
