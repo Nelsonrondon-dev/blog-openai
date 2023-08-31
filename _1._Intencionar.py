@@ -50,7 +50,7 @@ def chatGPT(sistema, usuario):
         except Exception as e:
             pass
 
-nombre_archivo = "3. Intencionadas.txt"
+nombre_archivo = "3._Intencionadas.txt"
 bloqueo = threading.Lock()
 
 def procesar_keyword(keyword):
