@@ -137,7 +137,7 @@ def procesar_titulo(titulo, escritor, bloqueo):
     escritor.writerow(fila)
     bloqueo.release()
 
-with open("5. Articulos.csv", "w", newline="", encoding="utf-8") as archivo_csv:
+with open("5._Articulos.csv", "w", newline="", encoding="utf-8") as archivo_csv:
     escritor = csv.writer(archivo_csv)
     escritor.writerow(["Keyword", "Titulo", "Portada", "Articulo", "Metadescripcion", "Categoria"])
     bloqueo = threading.Lock()

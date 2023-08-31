@@ -89,9 +89,9 @@ def obtener_estructura(titulo):
 
 def obtener_seccion(titulo, estructura):
     seccion = chatGPT(seccion_sistema, seccion_usuario.format(titulo=titulo, estructura=estructura))
-    seccion = seccion.replace("<h2>Introducción</h2>", "")
-    seccion = seccion.replace("<h3>Conclusiones</h3>", "")
-    seccion = seccion.replace("<h3>Conclusión</h3>", "")
+    seccion = seccion.replace("# Introducción", "")
+    seccion = seccion.replace("## Conclusiones", "")
+    seccion = seccion.replace("## Conclusión", "")
     seccion = re.sub(r'En conclusión, (\w)', lambda match: match.group(1).upper(), seccion)
     seccion = re.sub(r'En resumen, (\w)', lambda match: match.group(1).upper(), seccion)
     seccion = seccion.replace("En conclusión, ", "")
