@@ -8,30 +8,30 @@ import markdown  # Agregado: Importar la librería markdown
 
 N_HILOS = 2000
 
-with open("0. GPTs.txt", "r", encoding="utf-8") as f:
+with open("0._GPTs.txt", "r", encoding="utf-8") as f:
     gpts = [line.strip() for line in f]
-with open("4. Titulos.csv", newline='', encoding='utf-8') as f:
+with open("4._Titulos.csv", newline='', encoding='utf-8') as f:
     csv_titulos = csv.DictReader(f)
     titulos = list(csv_titulos)
-with open("0. Sistema/2. Imagen.txt", "r", encoding="utf-8") as f:
+with open("0._Sistema/2._Imagen.txt", "r", encoding="utf-8") as f:
     imagen_sistema = f.read().strip()
-with open("1. Usuario/2. Imagen.txt", "r", encoding="utf-8") as f:
+with open("1._Usuario/2._Imagen.txt", "r", encoding="utf-8") as f:
     imagen_usuario = f.read().strip()
-with open("0. Sistema/4. Estructura.txt", "r", encoding="utf-8") as f:
+with open("0._Sistema/4._Estructura.txt", "r", encoding="utf-8") as f:
     estructura_sistema = f.read().strip()
-with open("1. Usuario/4. Estructura.txt", "r", encoding="utf-8") as f:
+with open("1._Usuario/4._Estructura.txt", "r", encoding="utf-8") as f:
     estructura_usuario = f.read().strip()
-with open("0. Sistema/5. Sección.txt", "r", encoding="utf-8") as f:
+with open("0._Sistema/5._Sección.txt", "r", encoding="utf-8") as f:
     seccion_sistema = f.read().strip()
-with open("1. Usuario/5. Sección.txt", "r", encoding="utf-8") as f:
+with open("1._Usuario/5._Sección.txt", "r", encoding="utf-8") as f:
     seccion_usuario = f.read().strip()
-with open("0. Sistema/8. Metadescripción.txt", "r", encoding="utf-8") as f:
+with open("0._Sistema/8._Metadescripción.txt", "r", encoding="utf-8") as f:
     metadescripcion_sistema = f.read().strip()
-with open("1. Usuario/8. Metadescripción.txt", "r", encoding="utf-8") as f:
+with open("1._Usuario/8._Metadescripción.txt", "r", encoding="utf-8") as f:
     metadescripcion_usuario = f.read().strip()
-with open("0. Sistema/9. Categoría.txt", "r", encoding="utf-8") as f:
+with open("0._Sistema/9._Categoría.txt", "r", encoding="utf-8") as f:
     categoria_sistema = f.read().strip()
-with open("1. Usuario/9. Categoría.txt", "r", encoding="utf-8") as f:
+with open("1._Usuario/9._Categoría.txt", "r", encoding="utf-8") as f:
     categoria_usuario = f.read().strip()
 
 if len(titulos) < N_HILOS:

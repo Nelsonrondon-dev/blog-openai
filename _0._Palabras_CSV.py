@@ -2,8 +2,8 @@ import os
 import pandas as pd
 
 CAMPO_KEYWORD = "Keywords"
-CARPETA = "_. Palabras CSV"
-ARCHIVO_GUARDAR = "2. Keywords.txt"
+CARPETA = "_.Palabras_CSV"
+ARCHIVO_GUARDAR = "2._Keywords.txt"
 
 def extraer_keywords(carpeta_keywords):
     keywords = []

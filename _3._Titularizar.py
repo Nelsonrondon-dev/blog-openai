@@ -5,13 +5,13 @@ import threading
 
 N_HILOS = 2000
 
-with open("0. GPTs.txt", "r", encoding="utf-8") as f:
+with open("0._GPTs.txt", "r", encoding="utf-8") as f:
     apis = [linea.strip() for linea in f]
-with open("3. Intencionadas.txt", "r", encoding="utf-8") as f:
+with open("3._Intencionadas.txt", "r", encoding="utf-8") as f:
     keywords = [linea.strip() for linea in f]
-with open("0. Sistema/1. Título.txt", "r", encoding="utf-8") as f:
+with open("0._Sistema/1._Título.txt", "r", encoding="utf-8") as f:
     titulo_sistema = f.read().strip()
-with open("1. Usuario/1. Título.txt", "r", encoding="utf-8") as f:
+with open("1._Usuario/1._Título.txt", "r", encoding="utf-8") as f:
     titulo_usuario = f.read().strip()
 
 if len(keywords) < N_HILOS:
@@ -51,7 +51,7 @@ def chatGPT(sistema, usuario):
         except Exception as e:
             pass
 
-nombre_archivo = "4. Titulos.csv"
+nombre_archivo = "4._Titulos.csv"
 bloqueo = threading.Lock()
 
 def procesar_keyword(keyword):
