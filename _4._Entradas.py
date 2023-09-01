@@ -5,6 +5,8 @@ import re
 import concurrent.futures
 import threading
 import markdown  # Agregado: Importar la librería markdown
+from slugify import slugify
+from unidecode import unidecode
 
 N_HILOS = 2000
 
@@ -116,23 +118,29 @@ def obtener_metadescripcion(titulo):
 
 def obtener_categoria(titulo):
     categoria = chatGPT(categoria_sistema, categoria_usuario.format(titulo=titulo))
+    categoria = unidecode(categoria)  # Convierte los caracteres acentuados en caracteres sin acento
     categoria = categoria.rstrip(".")
     if categoria.startswith('"') and categoria.endswith('"'):
         categoria = categoria[1:-1]
         categoria = categoria.rstrip(".")
     return categoria
 
-
 def guardar_resultado_en_markdown(titulo, resultado):
-    archivo_md = f"resultados_markdown/{titulo}.md"
+    slug = slugify(titulo)
+    archivo_md = f"resultados_markdown/{slug}.mdx"
     with open(archivo_md, "w", encoding="utf-8") as md_file:
         md_file.write(resultado)
 
-# Modificado: Eliminar la parte de escritura en archivo CSV
+def reemplazar_encabezado_toc(articulo):
+    primer_indice = articulo.find("##")
+    if primer_indice != -1:
+        articulo_modificado = articulo[:primer_indice] + '<TOCInline toc={props.toc} exclude="Introduction" />\n\n##' + articulo[primer_indice+2:]
+        return articulo_modificado
+    return articulo
 
-# Modificado: Función para procesar un título y guardar resultado en archivo Markdown
 def procesar_titulo(titulo):
     keyword = titulo["Keyword"]
+    
     titulo_articulo = titulo["Titulo"]
    
     portada = obtener_portada(titulo)
@@ -141,24 +149,24 @@ def procesar_titulo(titulo):
     
     articulo = obtener_seccion(titulo, estructura)
 
+    lineas = articulo.split('\n')
+    contenido = "\n".join(lineas[1:])
+    articulo = reemplazar_encabezado_toc(contenido) 
+
     metadescripcion = obtener_metadescripcion(titulo)
     
     categoria = obtener_categoria(titulo)
-    
-    # Resto del código para obtener datos generados
-    
+        
     resultado_md = f"""
-    ---
-    title: '{titulo_articulo}'
-    date: '2019-10-11'
-    tags: ['{categoria}']
-    draft: false
-    summary: '{metadescripcion}'
-    ---
-    {articulo}
-    """
-    # resultado_html = markdown.markdown(resultado_md)
-    
+---
+title: '{titulo_articulo}'
+date: '2019-10-11'
+tags: ['{categoria}']
+draft: false
+summary: '{metadescripcion}'
+---
+{articulo}
+"""    
     guardar_resultado_en_markdown(titulo_articulo, resultado_md)
 
     # Crear directorio para archivos Markdown si no existe

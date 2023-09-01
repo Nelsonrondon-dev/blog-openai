@@ -1,4 +1,4 @@
-Escribe de forma extensa como si fuese código Markdown un artículo web para mi blog. Puedes utilizar unicamente  " ##, ###, - ,  y **strong**".
+Escribe de forma extensa como si fuese código Markdown un artículo web para mi blog otimizado para SEO. Puedes utilizar unicamente los siguientes elementos: "##", "###", "-", "**strong**", enlaces y listas
 
 Las respuestas a las preguntas frecuentes deben ser cortas.
 
