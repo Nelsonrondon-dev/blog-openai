@@ -49,6 +49,7 @@ def chatGPT(sistema, usuario):
             return texto_respuesta
             
         except Exception as e:
+            print(f"Excepción en chatGPT: {e}")  # Agregado: Imprimir detalles de la excepción
             pass
 
 nombre_archivo = "4._Titulos.csv"
