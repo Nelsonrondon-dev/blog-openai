@@ -7,6 +7,7 @@ import threading
 import markdown  # Agregado: Importar la librería markdown
 from slugify import slugify
 from unidecode import unidecode
+import time
 
 N_HILOS = 2000
 
@@ -72,6 +73,9 @@ def chatGPT(sistema, usuario):
             
         except Exception as e:
             print(f"Excepción en chatGPT: {e}")  # Agregado: Imprimir detalles de la excepción
+            # Rotar a la siguiente clave API en caso de error
+            clave_api_actual = (clave_api_actual + 1) % len(apis)
+            time.sleep(1)  # Agregar un retraso antes de intentar la siguiente solicitud
             pass
 
 def obtener_portada(titulo):
