@@ -72,10 +72,10 @@ def chatGPT(sistema, usuario):
             return texto_respuesta
             
         except Exception as e:
-            print(f"Excepción en chatGPT: {e}")  # Agregado: Imprimir detalles de la excepción
-            # Rotar a la siguiente clave API en caso de error
+            print(f"Excepción en chatGPT: {e}")
+             # Rotar a la siguiente clave API en caso de error
             clave_api_actual = (clave_api_actual + 1) % len(apis)
-            time.sleep(1)  # Agregar un retraso antes de intentar la siguiente solicitud
+            time.sleep(1)  
             pass
 
 def obtener_portada(titulo):
