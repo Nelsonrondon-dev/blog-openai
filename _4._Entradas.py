@@ -74,7 +74,7 @@ def chatGPT(sistema, usuario):
         except Exception as e:
             print(f"Excepción en chatGPT: {e}")
              # Rotar a la siguiente clave API en caso de error
-            clave_api_actual = (clave_api_actual + 1) % len(apis)
+            clave_api_actual = (clave_api_actual + 1) % len(gpts)
             time.sleep(1)  
             pass
 
